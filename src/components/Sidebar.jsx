@@ -39,10 +39,12 @@ function Sidebar() {
 
   return (
     <>
-      {/* Desktop Sidebar */}      <div className="hidden lg:block h-screen w-64 bg-slate-800 text-white fixed left-0 top-0">
-        <div className="p-4 h-full flex flex-col">
-          <h2 className="text-xl font-bold mb-8">Language Menu</h2>          <nav className="flex-1 py-10">
-            <ul className="flex flex-col space-y-8">
+      {/* Desktop Sidebar */}      <div className="hidden lg:block h-screen w-72 bg-slate-800 text-white fixed left-0 top-0">
+        <div className="px-8 py-10 h-full flex flex-col">
+          <h2 className="text-2xl font-bold m-5 px-2 text-center">Language Menu</h2>
+          <br />
+          <nav className="flex-1">
+            <ul className="flex flex-col gap-6 px-2">
               {menuItems.map((item) => (
                 <li key={item.id} className="group">
                   <button
@@ -52,13 +54,12 @@ function Sidebar() {
                         ? 'bg-indigo-600 text-white' 
                         : 'hover:bg-slate-700'
                       }`}
-                  >
-                    <span className="w-8 h-8 flex items-center justify-center mr-3">
-                      <FontAwesomeIcon icon={item.icon} className={`text-lg ${activeSection === item.id ? 'scale-110' : ''}`} />
+                  >                    <span className="w-10 h-10 flex items-center justify-center mr-4">
+                      <FontAwesomeIcon icon={item.icon} className={`text-xl ${activeSection === item.id ? 'scale-110' : ''}`} />
                     </span>
                     <div className="text-left">
-                      <div className="font-medium">{item.label}</div>
-                      <div className={`text-xs ${activeSection === item.id ? 'text-indigo-200' : 'text-slate-400'}`}>
+                      <div className="font-medium text-sm">{item.label}</div>
+                      <div className={`text-xs mt-0.5 ${activeSection === item.id ? 'text-indigo-200' : 'text-slate-400'}`}>
                         {item.description}
                       </div>
                     </div>
